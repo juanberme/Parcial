@@ -1,0 +1,10 @@
+package model;
+
+public class pelicula implements Comparable<pelicula>{
+
+	@Override
+	public int compareTo(pelicula arg0) {
+		return 0;
+	}
+
+}

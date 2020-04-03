@@ -1,0 +1,6 @@
+Nombre: The IrishmanAno: 2019Rating: 84Peli o Serie: movie
+Nombre: Breaking BadAno: 2008Rating: 96Peli o Serie: serie
+Nombre: DarkAno: 2017Rating: 96Peli o Serie: serie
+Nombre: MindhunterAno: 2017Rating: 95Peli o Serie: serie
+Nombre: OzarkAno: 2017Rating: 93Peli o Serie: serie
+Nombre: Star TrekAno: 2017Rating: 88Peli o Serie: serie

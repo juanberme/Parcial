@@ -1,0 +1,67 @@
+package model;
+
+import java.util.*;
+import java.util.LinkedList;
+
+import processing.core.PApplet;
+
+public class logica {
+	PApplet n;
+	private String[] texto;
+	private LinkedList<pelicula> lasPelis;
+	private ano ano;
+	private nombre nombre;
+	private peliOserie peliOserie;
+
+	public logica(PApplet app) {
+		this.n = app;
+		ano = new ano();
+		nombre = new nombre();
+		peliOserie = new peliOserie();
+		texto = n.loadStrings("./texto/netflix.txt");
+		cargarTexto();
+	}
+
+	private void cargarTexto() {
+		
+		for(int i = 0; i < texto.length; i++) {
+			String[] recorrerTexto = texto[i].split(",");
+			int ano = Integer.parseInt(recorrerTexto[1]);
+			int rating = Integer.parseInt(recorrerTexto[2]);
+			String peliOserie = recorrerTexto[3];
+			String nombre = recorrerTexto[0];
+			System.out.println("entra");
+			lasPelis.add(new pelicula( ano,  rating, peliOserie,  nombre,  n));
+			
+			
+		}
+		
+	}
+
+	public LinkedList<pelicula> getLasPelis() {
+		return lasPelis;
+
+	}
+
+	public void setLasPelis(LinkedList<pelicula> lasPelis) {
+		this.lasPelis = lasPelis;
+	}
+
+	public void ordenar(int i) {
+		switch (i) {
+		case 0:
+			Collections.sort(lasPelis);
+			break;
+		case 1:
+			Collections.sort(lasPelis, ano);
+			break;
+		case 2:
+			Collections.sort(lasPelis, nombre);
+			break;
+		case 3:
+			Collections.sort(lasPelis, peliOserie);
+			break;
+		}
+	}
+
+}

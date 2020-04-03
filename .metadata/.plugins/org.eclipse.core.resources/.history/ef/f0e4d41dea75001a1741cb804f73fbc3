@@ -1,0 +1,14 @@
+package controller;
+
+import model.logica;
+import processing.core.PApplet;
+
+public class controller {
+	
+	private PApplet app;
+	private logica logic;
+	
+	public controller(PApplet app) {
+		logic = new logica(app);
+	}
+}

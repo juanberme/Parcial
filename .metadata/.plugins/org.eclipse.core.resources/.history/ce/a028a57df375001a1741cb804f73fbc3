@@ -1,0 +1,47 @@
+package view;
+
+import controller.controller;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class main extends PApplet {
+	
+	private controller controller;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PApplet.main("view.main");
+	}
+	
+	public void settings() {
+		size(600,600);
+	}
+	public void setup() {
+		
+		controller = new controller(this);
+	}
+	
+	public void draw() {
+		background(0);
+		for(int a = 0; a < controller.LinkedList().size(); a++) {
+			int posX = 20;
+			int posY = 20*(a+1);
+			controller.LinkedList().get(a).dibujar(posX, posY);
+		}
+		
+		fill(0,0,255);
+		textSize(14);
+		text("presiona a para id", 60, 550);
+		text("presiona s para nombre", 140, 570);
+		text("presiona d para edad", 240, 550);
+		text("presiona s para fecha", 340, 570);
+		text("presiona s para raza", 440, 550);
+		
+	}
+	
+	public void keyPressed() {
+		controller.ordenar(key);
+	}
+
+}

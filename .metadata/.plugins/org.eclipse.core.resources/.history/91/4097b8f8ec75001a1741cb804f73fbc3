@@ -1,0 +1,87 @@
+package model;
+
+import processing.core.PApplet;
+
+public class pelicula implements Comparable<pelicula>{
+
+	private int ano2, rating2;
+	private String nombre2, peliOserie2;
+	private PApplet app1;
+
+	
+	
+
+	
+
+
+
+	public pelicula(int ano2, int rating2, String peliOserie2, String nombre2, PApplet n) {
+		this.ano2 = ano2;
+		this.rating2 = rating2;
+		this.nombre2 = nombre2;
+		this.peliOserie2 = peliOserie2;
+		this.app1 = n;
+	}
+
+
+
+	public int getAno() {
+		return ano2;
+	}
+
+
+
+	public void setAno(int ano) {
+		this.ano2 = ano;
+	}
+
+
+
+	public int getRating() {
+		return rating2;
+	}
+
+
+
+	public void setRating(int rating) {
+		this.rating2 = rating;
+	}
+
+
+
+	public String getNombre() {
+		return nombre2;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre2 = nombre;
+	}
+
+
+
+	public String getPeliOserie() {
+		return peliOserie2;
+	}
+
+
+
+	public void setPeliOserie(String peliOserie) {
+		this.peliOserie2 = peliOserie;
+	}
+
+
+
+
+	@Override
+	public int compareTo(pelicula arg0) {
+		return this.rating2 - arg0.getRating();
+	}
+	
+	public void dibujar(int posX, int posY) {
+		app1.fill(255,0,0);
+		app1.text(nombre2+ano2+rating2+peliOserie2,posX, posY);
+	}
+
+}
